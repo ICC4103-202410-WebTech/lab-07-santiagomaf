@@ -48,17 +48,20 @@ Make sure to create the relationships between the tables, so the database is pop
 1. Find all the posts that belong to a user with the name "John Doe".
 
 ```ruby
-### Code here
+User.where name: "John Doe"
 ```
 
 2. Find all the tags that belong to a post with the title "Post 1".
 
 ```ruby
-### Code here
+Tag.find(Post.where title:"Post 1")
 ```
 
 3. Find all users that have a post with the tag "Tag 1".
 
 ```ruby
-### Code here
+User.find(Post.find(Tag.where name: " Tag 1"))
 ```
+
+NO SUPE COMO SACAR EL  LIMIT 1 DE LA CONSULTA, FELIZ SI ME PUEDEN AYUDAR Y DEJAR EN EL COMENTARIO O MANDAR UN MENSAJE DE COMO SE HACIA PORQUE QUEDE SUPER METIDO Y NO PUDE ENCONTRAR ALGO SIMILAR EN NINGUN LADO
+
